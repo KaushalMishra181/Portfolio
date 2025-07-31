@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media</title>
+    <style>
+        body{
+      
+  background: radial-gradient(circle at top, #1a1a1a, #000);
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+   
+ 
+  
+
+}
+        .social-section {
+  background-color: #0d0d0d;
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.social-card {
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.social-card:hover {
+  transform: scale(1.05);
+}
+
+.social-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.social-card a,
+.social-card button {
+  display: block;
+  margin: 10px auto;
+  padding: 8px 15px;
+  background: #00ffff;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.qr-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  height: 100%; width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.qr-modal img {
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00ffff;
+}
+    </style>
+</head>
+<body>
+    <section class="social-section">
+  <h2>🌐 Connect With Me</h2>
+  <div class="social-grid">
+    
+    <!-- Instagram -->
+    <div class="social-card">
+      <img src="/0001.jpeg.jpg" alt="Instagram" class="social-img" />
+      <h3>Instagram</h3>
+      <a href="https://www.instagram.com/kaushal.m_?igsh=MWN1amdpMjFwenZqeA==" target="_blank">Visit</a>
+      <button onclick="showQR('qr-instagram.png')">QR Code</button>
+    </div>
+
+    <!-- Snapchat -->
+    <div class="social-card">
+      <img src="snapchat.jpg" alt="Snapchat" class="social-img" />
+      <h3>Snapchat</h3>
+      <a href="https://snapchat.com/add/yourusername" target="_blank">Visit</a>
+      <button onclick="showQR('qr-snapchat.png')">QR Code</button>
+    </div>
+
+    <!-- Facebook -->
+    <div class="social-card">
+      <img src="facebook.jpg" alt="Facebook" class="social-img" />
+      <h3>Facebook</h3>
+      <a href="https://facebook.com/yourusername" target="_blank">Visit</a>
+      <button onclick="showQR('qr-facebook.png')">QR Code</button>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="social-card">
+      <img src="linkedin.jpg" alt="LinkedIn" class="social-img" />
+      <h3>LinkedIn</h3>
+      <a href="https://linkedin.com/in/yourusername" target="_blank">Visit</a>
+      <button onclick="showQR('qr-linkedin.png')">QR Code</button>
+    </div>
+
+    <!-- GitHub -->
+    <div class="social-card">
+      <img src="github.jpg" alt="GitHub" class="social-img" />
+      <h3>GitHub</h3>
+      <a href="https://github.com/yourusername" target="_blank">Visit</a>
+      <button onclick="showQR('qr-github.png')">QR Code</button>
+    </div>
+    
+  </div>
+
+  <!-- QR Modal -->
+  <div id="qr-modal" class="qr-modal" onclick="hideQR()">
+    <img id="qr-image" src="" alt="QR Code">
+  </div>
+</section>
+
+<script>
+    function showQR(src) {
+  const modal = document.getElementById("qr-modal");
+  const qrImage = document.getElementById("qr-image");
+  qrImage.src = src;
+  modal.style.display = "flex";
+}
+
+function hideQR() {
+  document.getElementById("qr-modal").style.display = "none";
+}
+</script>
+</body>
+</html>

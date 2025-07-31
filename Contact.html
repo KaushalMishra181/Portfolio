@@ -1,0 +1,97 @@
+  <!-- contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Me</title>
+  <style>
+body.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-container {
+  max-width: 500px;
+  margin: 80px auto;
+  padding: 30px;
+  background-color: #1e1e1e;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+.contact-container h1 {
+  text-align: center;
+  color: #00ffcc;
+}
+
+.contact-container p {
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 8px;
+  background: #2c2c2c;
+  color: white;
+  font-size: 16px;
+}
+
+form input::placeholder, form textarea::placeholder {
+  color: #aaa;
+}
+
+form button {
+  width: 100%;
+  background-color: #00ffcc;
+  color: black;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background-color: #00e6b8;
+}
+  </style>
+</head>
+<body class="dark-theme">
+
+  <div class="contact-container">
+    <h1>📬 Contact Me</h1>
+    <p>Have any questions or just want to say hi? Fill the form below 👇</p>
+
+    <form id="contact-form" action="https://formsubmit.co/mrkaushal87@gmail.com" method="POST">
+      <!-- Don't forget to replace YOUR_EMAIL with your real email -->
+
+      <input type="text" name="name" placeholder="Your Name" required/>
+      <input type="email" name="email" placeholder="Your Email" required/>
+      <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
+
+      <!-- Optional hidden field to prevent spam -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function() {
+  alert("Your message has been sent! 🙌");
+});
+  </script>
+</body>
+</html>
